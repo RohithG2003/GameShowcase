@@ -1,0 +1,116 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #333;
+    color: #fff;
+  }
+  
+  .nav {
+    display: flex;
+    flex-wrap: nowrap; /* Prevent items from wrapping */
+    overflow-x: auto; /* Enable horizontal scrolling if needed */
+  }
+  
+  .nav-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex; /* Display items in a row */
+  }
+  
+  .nav-list li {
+    margin-right: 20px;
+  }
+  
+  .nav-list li:last-child {
+    margin-right: 0;
+  }
+  
+  .nav-list li a {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .btn {
+    background-color: #ff6600;
+    padding: 10px 20px;
+    border-radius: 5px;
+  }
+  
+  .hamburger-menu {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex; /* Make the button a flex container */
+    align-items: center; /* Align items vertically */
+  }
+  
+  .hamburger-icon {
+    display: block;
+    width: 30px;
+    height: 2px;
+    background-color: #fff;
+    position: relative;
+  }
+  
+  .hamburger-icon::before,
+  .hamburger-icon::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    position: absolute;
+    transition: transform 0.3s ease;
+  }
+  
+  .hamburger-icon::before {
+    top: -8px;
+  }
+  
+  .hamburger-icon::after {
+    bottom: -8px;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .nav {
+      display: none;
+    }
+  
+    .hamburger-menu {
+      display: flex;
+      align-items: center;
+      margin-right: 20px; /* Add margin to the right for spacing */
+    }
+  
+    .nav-list {
+      flex-direction: column;
+      padding: 10px 0;
+      background-color: #333;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      z-index: 1;
+      display: none;
+    }
+  
+    .nav-list.active {
+      display: flex;
+    }
+  
+    .nav-list li {
+      margin: 10px 0;
+    }
+  
+    .hamburger-icon::before {
+      transform: translateY(-5px) rotate(-45deg);
+    }
+  
+    .hamburger-icon::after {
+      transform: translateY(5px) rotate(45deg);
+    }
+  }
+  
